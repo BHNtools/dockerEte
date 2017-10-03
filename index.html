@@ -1,0 +1,99 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+</head>
+<body>
+    <header>
+        <section style="color:blue;float:left;padding-right:10px;">
+         <img src="Docker_Ete3_logo.png" style="width:200px;height:100px;">
+         <br>
+         </section>
+        <section style="color:navy;float:left;padding-left:15px;">
+        <h1>docker-ete</h1>
+        <citation>
+        Debian(Stretch) docker image for ETE3.
+        </citation>
+        </section>
+    </header>
+<section style="color:navy;float:left;padding-left:15px;">
+<article>
+
+<h1 id='idtitle1'>I. What is this?</h1>
+<p>
+ Debian(Stretch) docker image for phylogeny tree vizualisation.
+<ul>-Examples: </ul>
+<li>Default ncbi tree : pngs/ncbi-default-tree.png </li>
+<code><pre>cut -f1 /home/najlabioinfo/species.txt | ete3 ncbiquery --tree | xvfb-run ete3 view --ncbi --image ncbi-default-tree.png</pre></code></p>
+<li>Colored tree: pngs/ncbi-colored-tree.png </li>
+<code><pre>cut -f1 /home/najlabioinfo/species.txt | ete3 ncbiquery --tree | xvfb-run ete3 view -t --face 'value:@name, size:18, color:auto()' --face 'value:@dist, size:10' --image ncbi-colored-tree.png</pre></code></p>
+</p>
+
+<h1 id='idtitle2'>II. How to use it?</h1>
+<p style="color:navy;"> a)Pull the image
+<code><pre>docker pull bhntools/dockerete:latest</pre></code></p>
+<p style="color:navy;"> b)Run the image
+<code><pre>docker run -it bhntools/dockerete:latest ete3 -h</pre></code></p>
+<p style="color:navy;"> c)Link</p>
+<a href='https://hub.docker.com/r/bhntools/...'>https://hub.docker.com/</a>
+
+<h1 id='idtitle3'> III. References</h1>
+<h2> III.1/ Documentation</h2>
+<ul>- Official documentation <br>
+<li><a href="http://etetoolkit.org/documentation/ete-view/">http://etetoolkit.org/documentation/ete-view</a></li>
+<li><a href="http://etetoolkit.org/documentation/ete-ncbiquery/">http://etetoolkit.org/documentation/ete-ncbiquery/</a></li>
+<li><a href="http://etetoolkit.org/docs/latest/reference/reference_treeview.html#color-names">http://etetoolkit.org/docs/latest/reference/reference_treeview.html#color-names</a>
+</li>
+</ul>
+<h2> III.2/ Support</h2>
+<p>- docker-ete is a heavy, but complete, version. A smaller versions can be used :</p>
+<ul>- Available version(without taxa-dump) <br>
+<li><a https://hub.docker.com/r/cbcrg/ete3/">https://hub.docker.com/r/cbcrg/ete3/</a> : docker pull cbcrg/ete3</li>
+</ul><br>
+<ul>- Create one in 10min<br>
+<code><pre>apt-get install xvfb</pre></code>
+<code><pre>wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O Miniconda-latest-Linux-x86_64.sh</pre></code>
+<code><pre>bash Miniconda-latest-Linux-x86_64.sh -b -p ~/anaconda_ete/</pre></code>
+<code><pre>export PATH=~/anaconda_ete/bin:$PATH;</pre></code>
+<code><pre>conda install -c etetoolkit ete3 ete3_external_apps </pre></code>
+<code><pre>xvfb-run ete3 view -t '(a, b); ' -o test.png</pre></code>
+</ul>
+<h2> III.3/ Bugs</h2>
+<ul>- ETE: cannot connect to X server <br>
+<li><a href="https://github.com/etetoolkit/ete/issues/101">https://github.com/etetoolkit/ete/issues/101</a></li>
+<li><a href="https://groups.google.com/forum/#!topic/etetoolkit/DVmewYxbIx8">https://groups.google.com/forum/#!topic/etetoolkit/DVmewYxbIx8</a></li>
+</ul>
+
+<h1 id='idtitle4'> IV. Issues and Contributing</h1> 
+<h2> IV.1/ Support</h2>
+<p>
+If you are having issues, please let me know.
+</p>
+<h2> IV.2/ Contribute</h2>
+<p>Bug reports, bug fixes, and new features are always welcome.<br>
+* Issue Tracker: <a href="https://github.com/bhntools/.../issues">github</a><br>
+* Source Code: <a href="https://github.com/bhntools/.../pulls">github</a></p>
+<h2 id='idtitleE'> IV.3/ Authors and Maintainers</h2>
+<p>BEN HASSINE NAJLA : <a href="MAILTO:bhndevtools@gmail.com?Subject=Docker-ETE">bhndevtools@gmail.com</a></p>
+
+<section style="font: bold;color:green;align:center;font-size:small;">
+<footer>
+BHNtools©2017
+<br>
+<span style="color:black;">MIT License.</span>
+</footer>
+</section>
+</article>
+</section>
+<aside style='float:right; font:bold; color:navy; align:center; font-size:small; border: 1.5px solid; border-radius:20px; width:200px;'>
+ <div style='font:bold;width:250px;padding-left:5px; padding-right:5px; margin-left:5px;'>Topics<br>
+<a href=#idtitle1>I. What is this?</a>
+<br>
+<a href=#idtitle2>II. How to use it?</a>
+<br>
+<a href=#idtitle3>III. References</a>
+<br>
+<a href=#idtitle4>IV. Issues and Contributing</a>
+</div>
+</aside>
+</body>
+</html>
