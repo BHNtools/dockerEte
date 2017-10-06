@@ -10,8 +10,7 @@ Docker images for ete3 [3.0.0b36]
 	
 ## Usage
 ==========
-
-<pre><code style='background: #C0C0C0;'>git clone https://github.com/BHNtools/dockerEte.git</code></pre>
+<a href="https://github.com/BHNtools/dockerEte/wiki">https://github.com/BHNtools/dockerEte/wiki</a>
 
 ## Authors & Maintainer
 ====================
